@@ -41,6 +41,7 @@ $(function() {
     return str;
   }
   $('#remove-btn').on('click', e => {
+    e.target.disabled = true
     let lines = $('#raw-input').val().split('\n')
     let res = []
     for (let i = 0; i < lines.length; i++) {
@@ -51,6 +52,7 @@ $(function() {
       res.push(line)
     }
     $('#raw-input').val(res.join('\n'))
+    e.target.disabled = false
   })
 });
 </script>
